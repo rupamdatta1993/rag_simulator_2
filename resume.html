@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rupam Datta | Product Manager Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050816;
+      --card: rgba(18, 24, 46, 0.7);
+      --primary: #6ee7ff;
+      --secondary: #8b5cf6;
+      --text: #f8fafc;
+      --muted: #9ca3af;
+      --border: rgba(255,255,255,0.08);
+      --gradient: linear-gradient(135deg, #6ee7ff 0%, #8b5cf6 100%);
+      --shadow: 0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top left, #111827 0%, #050816 45%, #03040c 100%);
+      color: var(--text);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: rgba(110, 231, 255, 0.08);
+      filter: blur(100px);
+      top: -200px;
+      left: -200px;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(139, 92, 246, 0.08);
+      filter: blur(120px);
+      bottom: -150px;
+      right: -100px;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent);
+      pointer-events: none;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--primary);
+      font-size: 13px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .headline {
+      font-size: 22px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 800px;
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .primary {
+      background: var(--gradient);
+      color: white;
+    }
+
+    .secondary {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .profile-card {
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .info-item small {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 11px;
+    }
+
+    .info-item p {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    .section {
+      padding: 30px;
+      position: relative;
+    }
+
+    .col-8 {
+      grid-column: span 8;
+    }
+
+    .col-4 {
+      grid-column: span 4;
+    }
+
+    .section-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .experience-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 18px;
+      transition: 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(110,231,255,0.35);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .experience-header h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .company {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .timeline {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: #d1d5db;
+      line-height: 1.8;
+    }
+
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .skill-pill:hover {
+      background: rgba(110,231,255,0.12);
+      transform: scale(1.05);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .metric-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric-card h2 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .metric-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .project-card {
+      padding: 24px;
+      border-radius: 22px;
+      margin-bottom: 18px;
+      background: linear-gradient(145deg, rgba(110,231,255,0.05), rgba(139,92,246,0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .project-card p {
+      color: #d1d5db;
+      line-height: 1.8;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .floating-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: 0.5;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @media (max-width: 1000px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .col-8, .col-4 {
+        grid-column: span 12;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 18px;
+      }
+
+      .hero-card,
+      .section,
+      .profile-card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .headline {
+        font-size: 18px;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-dot" style="top: 10%; left: 8%;"></div>
+  <div class="floating-dot" style="top: 60%; left: 90%; animation-delay: 2s;"></div>
+  <div class="floating-dot" style="top: 80%; left: 25%; animation-delay: 4s;"></div>
+
+  <div class="container">
+    <section class="hero">
+      <div class="hero-card glass">
+        <div class="tag">Future-Ready Product Leadership</div>
+
+        <h1>
+          Rupam <span class="gradient-text">Datta</span>
+        </h1>
+
+        <p class="headline">
+          Product Manager & Product Owner focused on building intelligent digital experiences, solving hiring ecosystem challenges, and transforming user pain points into scalable product opportunities.
+        </p>
+
+        <div class="cta-row">
+          <a href="#" class="btn primary">View Portfolio</a>
+          <a href="#" class="btn secondary">Download Resume</a>
+        </div>
+      </div>
+
+      <div class="profile-card glass">
+        <div>
+          <div class="avatar">RD</div>
+
+          <h2 style="margin-bottom: 8px;">Senior Product Owner Aspirant</h2>
+          <p style="color: var(--muted); line-height: 1.7;">
+            Building user-centric products through product strategy, roadmap execution, stakeholder management, analytics-driven decisions, and AI-enabled innovation.
+          </p>
+        </div>
+
+        <div class="info-list">
+          <div class="info-item">
+            <small>Current Focus</small>
+            <p>Product Strategy • AI Products • Hiring Platforms</p>
+          </div>
+
+          <div class="info-item">
+            <small>Domain Exposure</small>
+            <p>SaaS • Analytics • Cloud • Consumer Products</p>
+          </div>
+
+          <div class="info-item">
+            <small>Location</small>
+            <p>India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="section glass col-8">
+        <div class="section-title">Professional Summary</div>
+
+        <p style="line-height: 1.9; color: #d1d5db; font-size: 16px;">
+          Product professional with experience across product thinking, requirement gathering, workflow optimization, stakeholder alignment, and user journey improvements. Passionate about bridging business goals with customer empathy while leveraging data, AI, and automation to create impactful product ecosystems.
+          <br><br>
+          Recently focused on conceptualizing products around interview intelligence, candidate-HR experience gaps, fintech retention strategies, and AI-powered recommendation systems.
+        </p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <h2 class="gradient-text">AI + PM</h2>
+            <p>Integrating AI thinking into modern product workflows and user experience innovation.</p>
+          </div>
+
+          <div class="metric-card">
+            <h2 class="gradient-text">0→1</h2>
+            <p>Strong interest in MVP creation, PRDs, roadmap definition, and growth experimentation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section glass col-4">
+        <div class="section-title">Core Skills</div>
+
+        <div class="skill-grid">
+          <div class="skill-pill">Product Management</div>
+          <div class="skill-pill">Product Ownership</div>
+          <div class="skill-pill">Agile & Scrum</div>
+          <div class="skill-pill">PRD Writing</div>
+          <div class="skill-pill">Roadmap Planning</div>
+          <div class="skill-pill">User Research</div>
+          <div class="skill-pill">Stakeholder Management</div>
+          <div class="skill-pill">AI Product Thinking</div>
+          <div class="skill-pill">Analytics</div>
+          <div class="skill-pill">SaaS Products</div>
+          <div class="skill-pill">Growth Strategy</div>
+          <div class="skill-pill">JTBD Framework</div>
+          <div class="skill-pill">RICE Prioritization</div>
+          <div class="skill-pill">Wireframing</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top: 24px;">
+      <div class="section glass col-8">
+        <div class="section-title">Experience</div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <div>
+              <h3>Associate Product Manager</h3>
+              <div class="company">ITBoost Ecosystem</div>
+            </div>
+            <div class="timeline">Recent Experience</div>
+          </div>
+
+          <ul>
+            <li>Worked on product workflows, operational enhancements, and customer-focused improvements.</li>
+            <li>Collaborated across business and technical stakeholders to improve usability and feature alignment.</li>
+            <li>Explored open API integration possibilities and workflow automation strategies.</li>
+            <li>Contributed to prioritization discussions using frameworks such as RICE and JTBD.</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <div>
+              <h3>Product Strategy & Concept Development</h3>
+              <div class="company">Independent Product Research</div>
+            </div>
+            <div class="timeline">Ongoing</div>
+          </div>
+
+          <ul>
+            <li>Designed product concepts around hiring intelligence, interview transparency, and user retention.</li>
+            <li>Created detailed PRDs, MVP definitions, and roadmap structures for scalable product ecosystems.</li>
+            <li>Analyzed platforms like LinkedIn, Google Maps, Instagram, and GPay from a product strategy lens.</li>
+            <li>Focused heavily on user pain points, behavioral insights, and monetization opportunities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section glass col-4">
+        <div class="section-title">Highlights</div>
+
+        <div class="project-card">
+          <h3>Conduit</h3>
+          <p>
+            Unified hiring and interview feedback platform designed to bridge communication gaps between candidates, HR teams, and interviewers.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>AI Product Thinking</h3>
+          <p>
+            Strong focus on AI-enabled recommendation systems, intelligent workflows, embeddings, and RAG-based product understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top: 24px; margin-bottom: 20px;">
+      <div class="section glass col-12">
+        <div class="section-title">Education & Certifications</div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <div>
+              <h3>Add Your Degree / Certifications</h3>
+              <div class="company">University / Institution Name</div>
+            </div>
+            <div class="timeline">Year</div>
+          </div>
+
+          <ul>
+            <li>Add product certifications, agile credentials, analytics tools, or AI learning paths here.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Designed as a futuristic interactive resume • Built with HTML, CSS & JavaScript
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.experience-card, .project-card, .metric-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(110,231,255,0.12), rgba(255,255,255,0.03))`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.background = 'rgba(255,255,255,0.03)';
+      });
+    });
+
+    const title = document.querySelector('h1');
+
+    window.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.pageX) / 40;
+      const y = (window.innerHeight / 2 - e.pageY) / 40;
+
+      title.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
